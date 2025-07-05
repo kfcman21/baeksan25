@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울백산초등학교 AI 디지털 교육혁신 찾아가는 학교 컨설팅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: #1e3a8a; /* Default text color: 군청색 (Navy Blue) */
+            font-size: 20px; /* Base font size for readability, user request for 40px is applied to specific content sections */
+        }
+        /* Custom styles for details/summary accordion arrow */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details > summary::after {
+            content: '▼';
+            float: right;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+        }
+        details[open] > summary::after {
+            transform: rotate(180deg);
+        }
+        .bar-chart-bar {
+            transition: width 0.8s ease-in-out;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-teal': '#14b8a6',
+                        'brand-sky': '#38bdf8',
+                        'brand-orange': '#f97316',
+                        'brand-navy': '#1e3a8a',
+                        'warm-gray': '#f5f5f4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-warm-gray">
+
+    <header class="bg-white/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <span class="text-3xl">🎓</span>
+                        <span class="text-xl font-bold text-brand-navy">서울백산초 AI 교육혁신</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex md:space-x-4 lg:space-x-6">
+                    <a href="#intro" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">🎯 개요</a>
+                    <a href="#process" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">🗺️ 절차</a>
+                    <a href="#status" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">📊 현황 분석</a>
+                    <a href="#core-content" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">💡 핵심 내용</a>
+                    <a href="#training" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">🧑‍🏫 맞춤 연수</a>
+                    <a href="#effects" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">📈 기대 효과</a>
+                    <a href="#qna" class="text-brand-navy hover:text-brand-teal transition duration-300" style="font-size: 18px;">🙋 Q&A</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-brand-navy hover:text-white hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">메뉴 열기</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#intro" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">🎯 컨설팅 개요</a>
+                <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">🗺️ 컨설팅 진행 절차</a>
+                <a href="#status" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">📊 현황 분석</a>
+                <a href="#core-content" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">💡 컨설팅 핵심 내용</a>
+                <a href="#training" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">🧑‍🏫 맞춤형 연수 방안</a>
+                <a href="#effects" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">📈 기대 효과</a>
+                <a href="#qna" class="block px-3 py-2 rounded-md text-base font-medium text-brand-navy hover:text-white hover:bg-brand-teal" style="font-size: 24px;">🙋 질의응답</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section class="text-center my-16 md:my-24">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-brand-navy leading-tight">
+                서울백산초등학교 AI 디지털 교육혁신<br>찾아가는 학교 컨설팅
+            </h1>
+            <p class="mt-4 text-2xl md:text-3xl text-brand-orange font-semibold">'교사가 이끄는 교육혁신'을 향한 동반 성장</p>
+            <p class="mt-2 text-xl text-gray-500">교사 대상 설명자료</p>
+        </section>
+
+        <section id="intro" class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-8">🎯 컨설팅 개요: '찾아가는 학교 컨설팅'의 목표</h2>
+            <div class="space-y-8" style="font-size: 40px; line-height: 1.6;">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">1. 컨설팅의 핵심 목표</h3>
+                    <div class="bg-teal-50 border-l-8 border-brand-teal text-teal-900 p-6 rounded-r-lg shadow-sm">
+                        <p>단순히 교실에 디지털 기술을 접목하는 것을 넘어, 학생들이 디지털 시대에 필요한 핵심역량을 갖추도록 교사들이 상호 협력하며 수업 혁신을 시도하고, 이를 지원하는 디지털 기술과 환경, 제도를 갖추는 것을 목표로 합니다. 이를 통해 교사의 주도성과 전문성을 핵심으로 하는 <strong class="font-bold text-brand-orange">'교사가 이끄는 교육혁신'</strong>을 이루고자 합니다.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">2. 서울백산초 컨설팅의 특성</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><span class="text-2xl mr-3">✅</span><span><strong>맞춤형 심층 면담 기반 컨설팅:</strong> 서울백산초등학교의 구체적인 현황과 요구사항을 바탕으로 진행됩니다.</span></li>
+                        <li class="flex items-start"><span class="text-2xl mr-3">✅</span><span><strong>동반 성장 추구:</strong> 교사, 학생, 학부모 모두가 디지털 교육 환경 속에서 함께 성장할 수 있도록 지원합니다.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-12">🗺️ 컨설팅 진행 절차: 디지털 교육혁신을 향한 4단계 여정</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-4">
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg w-full md:w-1/4">
+                    <div class="text-white bg-brand-teal rounded-full w-16 h-16 flex items-center justify-center mx-auto text-2xl font-bold">STEP 1</div>
+                    <h3 class="text-xl font-bold my-4">사전 진단 분석</h3>
+                    <p class="text-lg">학교 현황 및 교사 체감도를 심층 파악합니다.</p>
+                </div>
+                <div class="text-4xl text-brand-sky-500 transform rotate-90 md:rotate-0">➔</div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg w-full md:w-1/4">
+                    <div class="text-white bg-red-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto text-2xl font-bold">STEP 2</div>
+                    <h3 class="text-xl font-bold my-4">심층 면담 진행</h3>
+                    <p class="text-lg">현장의 생생한 목소리를 듣고 구체적 요구를 파악합니다.</p>
+                </div>
+                <div class="text-4xl text-brand-sky-400 transform rotate-90 md:rotate-0">➔</div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg w-full md:w-1/4">
+                    <div class="text-white bg-brand-orange rounded-full w-16 h-16 flex items-center justify-center mx-auto text-2xl font-bold">STEP 3</div>
+                    <h3 class="text-xl font-bold my-4">운영 계획 수립</h3>
+                    <p class="text-lg">학교 맞춤형 컨설팅 운영 계획을 수립합니다.</p>
+                </div>
+                 <div class="text-4xl text-brand-sky-400 transform rotate-90 md:rotate-0">➔</div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg w-full md:w-1/4">
+                    <div class="text-white bg-green-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto text-2xl font-bold">STEP 4</div>
+                    <h3 class="text-xl font-bold my-4">사후 관리</h3>
+                    <p class="text-lg">변화와 만족도를 측정하여 지속 개선 방안을 모색합니다.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="status" class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-8">📊 서울백산초 현황 분석</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">🖥️ 디지털 인프라 체감도</h3>
+                     <div class="space-y-6 text-lg">
+                        <div>
+                            <p class="font-semibold mb-2">1. 교사용 디지털 기기 보급 수준</p>
+                            <div class="bg-gray-200 rounded-full h-8">
+                                <div class="bg-sky-500 h-8 rounded-full flex items-center justify-center text-white" style="width: 30.43%;">다소 충분</div>
+                            </div>
+                            <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-3 mt-2 rounded-r-lg text-base">
+                                <strong>🚨 주요 의견:</strong> '매우 부족(4.35%)' 또는 '다소 부족(17.39%)' 응답. 노트북 활용 지원 필요.
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">2. 디지털 기기 성능 및 속도</p>
+                             <div class="bg-gray-200 rounded-full h-8">
+                                <div class="bg-orange-500 h-8 rounded-full flex items-center justify-center text-white" style="width: 26.09%;">그렇지 않다</div>
+                            </div>
+                             <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-3 mt-2 rounded-r-lg text-base">
+                                <strong>🚨 주요 의견:</strong> 태블릿 동시 접속 시 절반은 참여 불가, 속도 저하 문제 발생.
+                            </div>
+                        </div>
+                        <div>
+                             <p class="font-semibold mb-2">3. 무선 인터넷 환경 안정성</p>
+                             <div class="bg-gray-200 rounded-full h-8">
+                                <div class="bg-teal-500 h-8 rounded-full flex items-center justify-center text-white" style="width: 47.83%;">다소 안정적</div>
+                            </div>
+                            <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-3 mt-2 rounded-r-lg text-base">
+                                <strong>🚨 주요 의견:</strong> '매우 불안정(8.70%)' 응답 존재. 와이파이 증설 요청.
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">🧑‍🏫 교사의 디지털 역량 체감도 (5점 만점)</h3>
+                    <div class="space-y-4 text-lg">
+                        <div class="space-y-5">
+                            <div>
+                                <p class="font-semibold">학습자 맞춤 학습 이해도 (문항 7)</p>
+                                <div class="w-full bg-gray-200 rounded-full h-6">
+                                    <div class="bg-teal-500 h-6 rounded-full text-center text-white bar-chart-bar" style="width: calc(2.78 / 5 * 100%);">2.78점</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold">학습 데이터 분석 이해도 (문항 9)</p>
+                                <div class="w-full bg-gray-200 rounded-full h-6">
+                                    <div class="bg-teal-500 h-6 rounded-full text-center text-white bar-chart-bar" style="width: calc(2.74 / 5 * 100%);">2.74점</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold">에듀테크 활용 설계 이해도 (문항 10)</p>
+                                <div class="w-full bg-gray-200 rounded-full h-6">
+                                    <div class="bg-teal-500 h-6 rounded-full text-center text-white bar-chart-bar" style="width: calc(2.83 / 5 * 100%);">2.83점</div>
+                                </div>
+                            </div>
+                             <div>
+                                <p class="font-semibold">'교육혁신' 역량 이해도 (문항 12)</p>
+                                <div class="w-full bg-gray-200 rounded-full h-6">
+                                    <div class="bg-teal-500 h-6 rounded-full text-center text-white bar-chart-bar" style="width: calc(2.91 / 5 * 100%);">2.91점</div>
+                                </div>
+                            </div>
+                      
+                         <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mt-4 rounded-r-lg text-base">
+                            <strong>🗣️ 주요 의견:</strong> "무엇을 어떻게 준비해야 할지 모르겠다", "개별 맞춤형 연수를 통해 자신감을 얻고 싶다"는 요청이 있었습니다.
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-8">🗣️ 선생님들의 목소리: '무엇을 지원받고 싶나요?'</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                
+                <div class="flex flex-wrap items-center justify-center gap-4 text-xl md:text-2xl font-bold my-8">
+                    <span class="bg-brand-teal text-white px-4 py-2 rounded-full">#맞춤형_연수</span>
+                    <span class="bg-brand-orange text-white px-5 py-2 rounded-full">#기기관리_규칙</span>
+                    <span class="bg-brand-sky-500 text-white px-4 py-2 rounded-full">#계정_간소화</span>
+                    <span class="bg-red-500 text-white px-6 py-3 rounded-full">#특수학생_지원</span>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full">#AI_프로그램_추천</span>
+                    <span class="bg-indigo-500 text-white px-4 py-2 rounded-full">#SW_세팅</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8" style="font-size: 40px; line-height: 1.6;">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">⚙️ 기술/행정 지원</h3>
+                        <ul class="space-y-3">
+                            <li class="flex"><span class="mr-3">✅</span>노트북 활용 지원</li>
+                            <li class="flex"><span class="mr-3">✅</span>SW 세팅 및 기기 관리 규칙 마련</li>
+                            <li class="flex"><span class="mr-3">✅</span>학생 계정 발급 및 관리 간소화</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">📚 콘텐츠/연수 지원</h3>
+                        <ul class="space-y-3">
+                            <li class="flex"><span class="mr-3">✅</span>유용한 AI 프로그램 추천</li>
+                            <li class="flex"><span class="mr-3">✅</span>개별 맞춤형 연수 제공</li>
+                            <li class="flex"><span class="mr-3">✅</span>특수학생 맞춤형 지원 방안</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="core-content" class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-8">💡 컨설팅 핵심 내용</h2>
+            <div class="space-y-4">
+                <details class="bg-white p-6 rounded-lg shadow-sm">
+                    <summary class="font-bold text-2xl cursor-pointer">1. 교원의 교육혁신 역량 이해 및 강화</summary>
+                    <div class="mt-4 pt-4 border-t" style="font-size: 40px; line-height: 1.6;">
+                        <p class="mb-4"><strong>'교사가 이끄는 교육혁신'</strong>을 위한 핵심 역량을 이해하고, 교과별 전문 과정을 통해 디지털 교육 도구를 수업에 적재적소에 활용하는 능력을 강화합니다.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                           <li>디지털 시대 핵심 역량 이해</li>
+                           <li>에듀테크 활용 학습자 진단 및 데이터 분석</li>
+                           <li>교육과정-수업-평가 설계 및 자료 개발</li>
+                           <li>학생 참여 수업 및 과정 중심 평가 적용</li>
+                        </ul>
+                       
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-sm">
+                    <summary class="font-bold text-2xl cursor-pointer">2. 학교 공동체의 디지털 혁신 지원</summary>
+                    <div class="mt-4 pt-4 border-t" style="font-size: 40px; line-height: 1.6;">
+                       <p>학교, 학부모, 학생이 함께 성장하는 <strong>지속 가능한 디지털 교육 생태계</strong>를 구축합니다.</p>
+                       <div class="grid md:grid-cols-3 gap-4 text-center mt-6">
+                           <div class="bg-sky-100 p-4 rounded-lg">🏫 <strong>학교</strong><br>지속가능 리더십 함양</div>
+                           <div class="bg-orange-100 p-4 rounded-lg">👨‍👩‍👧‍👦 <strong>학부모</strong><br>공감대 형성 및 이해 증진</div>
+                           <div class="bg-teal-100 p-4 rounded-lg">🧑‍🎓 <strong>학생</strong><br>디지털 문해력 함양</div>
+                       </div>
+                      
+                    </div>
+                </details>
+                 <details class="bg-white p-6 rounded-lg shadow-sm">
+                    <summary class="font-bold text-2xl cursor-pointer">3. 인프라 및 데이터 기반 현장 연구 지원</summary>
+                    <div class="mt-4 pt-4 border-t" style="font-size: 40px; line-height: 1.6;">
+                       <p>기술적 어려움을 해소하고, 수집된 데이터를 바탕으로 수업을 개선하고 성장하는 현장 연구를 지원합니다.</p>
+                       <ul class="space-y-2 mt-4">
+                           <li class="flex items-start"><span class="text-2xl mr-3">✅</span>디지털 기기 및 SW 세팅, AS 등 기술적 애로사항 해소</li>
+                           <li class="flex items-start"><span class="text-2xl mr-3">✅</span>학교 교육과정에 디지털 기반 교육 혁신 반영</li>
+                           <li class="flex items-start"><span class="text-2xl mr-3">✅</span>학습 데이터 기반 수업 성찰 및 개선 지원</li>
+                       </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="training" class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-8">🧑‍🏫 서울백산초 맞춤형 연수 방안</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-center mb-4">🚀<br>교사 디지털 역량 강화</h3>
+                    <p class="text-center text-gray-600 mb-6">실질적인 디지털 교육 연수</p>
+                    <ul class="space-y-3" style="font-size: 22px; line-height: 1.6;">
+                        <li class="flex"><span class="mr-2">1️⃣</span><strong>기본 도구 활용:</strong> Googel workspace 등 기초 다지기</li>
+                        <li class="flex"><span class="mr-2">2️⃣</span><strong>에듀테크 심화:</strong> Canva, Padlet 등 수업 활용도 UP!</li>
+                        <li class="flex"><span class="mr-2">3️⃣</span><strong>AI 교육 활용:</strong> ChatGPT, Khanmigo 등 미래 교육 대비</li>
+                    </ul>
+                    
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-center mb-4">⚙️<br>기술/행정 효율성 지원</h3>
+                    <p class="text-center text-gray-600 mb-6">수업 몰입을 위한 환경 조성</p>
+                    <ul class="space-y-3" style="font-size: 22px; line-height: 1.6;">
+                        <li class="flex"><span class="mr-2">🎯</span><strong>역할 맞춤형 연수:</strong> 교장/교감, 전담교사 등 맞춤형 콘텐츠</li>
+                        <li class="flex"><span class="mr-2">💻</span><strong>기기 관리 컨설팅:</strong> SW 세팅, 관리 규칙 마련 지원</li>
+                        <li class="flex"><span class="mr-2">🆔</span><strong>계정 관리 효율화:</strong> 초3 학생도 쉬운 계정 생성 방안 마련</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-center mb-4">❤️<br>포용적 교육 환경 구축</h3>
+                     <p class="text-center text-gray-600 mb-6">모두를 위한 디지털 교육</p>
+                    <ul class="space-y-3" style="font-size: 22px; line-height: 1.6;">
+                        <li class="flex"><span class="mr-2">🤝</span><strong>특수학생 전문 컨설팅:</strong> 한글 미해득 등 맞춤 지도 방안 제시</li>
+                        <li class="flex"><span class="mr-2">📶</span><strong>인프라 개선 협력:</strong> 안정적인 무선 인터넷 환경 구축 지원</li>
+                    </ul>
+                   
+                </div>
+            </div>
+        </section>
+
+        <section id="effects" class="my-20">
+            <h2 class="text-3xl md:text-4xl font-bold border-b-4 border-brand-teal pb-3 mb-8">📈 컨설팅을 통한 기대 효과</h2>
+             <div class="space-y-12" style="font-size: 40px; line-height: 1.6;">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">1. 교사 및 학생 중심의 긍정적 변화</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-teal-50 p-6 rounded-lg">
+                            <p class="font-bold text-xl mb-2">🧑‍🏫 교사의 디지털 역량 제고</p>
+                            <p>자신감과 활용도를 높여 수업 효율성 증대 및 전문성 신장</p>
+                        </div>
+                        <div class="bg-sky-50 p-6 rounded-lg">
+                            <p class="font-bold text-xl mb-2">🧑‍🎓 학생 맞춤 학습 기회 확대</p>
+                            <p>개별화된 학습으로 미래 핵심 역량 함양 및 수업 참여도 활성화</p>
+                        </div>
+                    </div>
+                     
+                </div>
+
+                 <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">2. 함께 성장하는 서울백산초 교육 공동체</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><span class="text-2xl mr-3">✅</span><strong>학교 교육의 질적 향상:</strong> 데이터 기반의 수업 개선으로 학생 성장 지속 지원</li>
+                        <li class="flex items-start"><span class="text-2xl mr-3">✅</span><strong>공동체의 동반 성장:</strong> 교사, 학생, 학부모가 함께 성장하는 긍정적 학교 문화 형성</li>
+                        <li class="flex items-start"><span class="text-2xl mr-3">✅</span><strong>지속 가능한 교육 혁신 기반 마련:</strong> 일회성이 아닌 지속 가능한 학교의 핵심 가치로 정착</li>
+                    </ul>
+                   
+                </div>
+            </div>
+        </section>
+
+        <section id="qna" class="my-20 text-center bg-brand-navy text-white p-12 rounded-2xl">
+            <h2 class="text-4xl font-bold mb-4">🙋 질의응답 및 다음 단계 안내</h2>
+            <p class="text-2xl mb-6">서울백산초등학교의 밝은 미래를 위한 동반 성장에 함께해주셔서 감사합니다.<br>궁금한 점이 있으시면 언제든지 질문해주세요.</p>
+          
+        </section>
+
+    </main>
+    
+    <footer class="text-center py-6 bg-gray-200 text-gray-600">
+        <p>&copy; 2025 서울백산초등학교 AI 디지털 교육혁신 컨설팅. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // 모바일 메뉴 토글 스크립트
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
